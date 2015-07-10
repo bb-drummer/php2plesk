@@ -3,10 +3,11 @@
 
 ### USAGE: 
 
-   `/root/php2plesk/php2plesk.sh {php-version} {displayname}`
+`/root/php2plesk/php2plesk.sh {php-version} {displayname}`
    
-   OR
-   `/root/php2plesk/php2plesk.sh -p {php-version} -d {displayname} [more options] (see below)`
+OR
+
+`/root/php2plesk/php2plesk.sh -p {php-version} -d {displayname} [more options]` (see below)
    
 
 
@@ -23,8 +24,10 @@
 *	`-d name`                        PLESK panel display name
 *	`-p version`                     php version (ex: 5.6.9)
 
+
 *	`-t path`                        target path for php installation (default '/usr/local/php_PHPVERSION_-cgi/')
 *	`-i filepath`                    target path for php.ini file (default '/usr/local/php_PHPVERSION_-cgi/etc/')
+
 
 *	`-l filepath`                    target path to installer logfile (default './php2plesk.log')
 *	`-H filepath`                    target path to PLESK panel 'php_handler' command (default '/usr/local/psa/bin/php_handler')
@@ -33,22 +36,28 @@
 *	`-u url`                         overwrite url to download php source files (overranks '-H hostname' option)
 *	`-T path`                        installer path for temporary file storage (default '/tmp/')
 
+
 *	`-e`                             open php.ini file to be edited (requires vim)
 *	`-n`                             be non-interactive (overranks '-e' option)
+
 
 *	`-h`                             show this message
 *	`-v`                             verbose output
 
+
 *	`--sapi`                         also compile apache2 module, use with caution(!)
 *	`--apxs-path`                    set path to 'apxs2' command (default: '/usr/bin/apxs2')
+
    
 *	`--suhosin`                      add SUHOSIN patch/extension to php configuration, must also set '--suhosin-version'
 *	`--suhosin-version version`      SUHOSIN patch/extension version (ex: '0.9.37.1') 
 *	`--suhosin-host hostname`        hostname for SUHOSIN patch/extension source download (optional, default: 'download.suhosin.org')
 
+
 *	`--xdebug`                       add xDebug extension to php configuration, must also set '--xdebug-version'
 *	`--xdebug-version version`       xDebug extension version (ex: '2.3.2') 
 *	`--xdebug-host hostname`         hostname for xDebug extension source download (optional, default: 'xdebug.org')
+
 
 *	`--memcached`                    add memcached extension to php configuration, must also set '--memcached-version'
 *	`--memcached-version version`    memcached extension version (ex: '1.4.24') 
