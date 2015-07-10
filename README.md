@@ -80,3 +80,14 @@ OR
 -	compile an older php version...
 
 	  `/root/php2plesk/php2plesk.sh -v -p 5.3.2 -d 5.3.2 -t /usr/local/php5.3.2-cgi-suhosin/  -i /usr/local/php5.3.2-cgi-suhosin/etc/ --suhosin --suhosin-version 0.9.37.1 -n -u http://museum.php.net/php5/php-5.3.2.tar.gz`
+	  
+	  
+	  
+
+### @TODO: 
+
+
+*	inside methods, check if files/directories are generated properly or if they are executable if needed
+*	simplify basics/dependencies install method
+
+
