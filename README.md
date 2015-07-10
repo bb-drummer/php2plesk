@@ -19,6 +19,7 @@
 
 ### OPTIONS:
 
+
 *	`-d name`                        PLESK panel display name
 *	`-p version`                     php version (ex: 5.6.9)
 
@@ -59,14 +60,14 @@
 #### placeholders for path and hostname/url parameters:
 
 
-*	`\_PHPVERSION_`          php version (ex: '5.6.9')
-*	`\_PHPHOST_`             php.net mirror hostname (ex: 'de1')
-*	`\_SUHOSINVERSION_`      SUHOSIN patch/extension version (ex: '0.9.37.1')
-*	`\_SUHOSINHOST_`         SUHOSIN patch/extension source download hostname (ex: 'download.suhosin.org')
-*	`\_XDEBUGVERSION_`       xDebug extension version (ex: '2.3.2')
-*	`\_XDEBUGHOST_`          xDebug extension source download hostname (ex: 'xdebug.org')
-*	`\_MEMCACHEDVERSION_`    xDebug extension version (ex: '2.3.2')
-*	`\_MEMCACHEDHOST_`       xDebug extension source download hostname (ex: 'memcached.org')
+*	`_PHPVERSION_`          php version (ex: '5.6.9')
+*	`_PHPHOST_`             php.net mirror hostname (ex: 'de1')
+*	`_SUHOSINVERSION_`      SUHOSIN patch/extension version (ex: '0.9.37.1')
+*	`_SUHOSINHOST_`         SUHOSIN patch/extension source download hostname (ex: 'download.suhosin.org')
+*	`_XDEBUGVERSION_`       xDebug extension version (ex: '2.3.2')
+*	`_XDEBUGHOST_`          xDebug extension source download hostname (ex: 'xdebug.org')
+*	`_MEMCACHEDVERSION_`    xDebug extension version (ex: '2.3.2')
+*	`_MEMCACHEDHOST_`       xDebug extension source download hostname (ex: 'memcached.org')
 
 	
 	
