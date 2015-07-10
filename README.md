@@ -31,7 +31,7 @@
 		<td>version</td>
 		<td>php version (ex: 5.6.9)</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">-t</td>
@@ -43,7 +43,7 @@
 		<td>filepath</td>
 		<td>target path for php.ini file (default '/usr/local/php_PHPVERSION_-cgi/etc/')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">-l</td>
@@ -60,7 +60,7 @@
 		<td>plesk-id</td>
 		<td>overwrite PLESK internal ID (default '_PHPVERSION_-custom')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">-s</td>
@@ -72,7 +72,7 @@
 		<td>url</td>
 		<td>overwrite url to download php source files (overranks '-H hostname' option)</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">-T</td>
@@ -89,7 +89,7 @@
 		<td> </td>
 		<td>verbose output</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">--sapi</td>
@@ -101,7 +101,7 @@
 		<td>path</td>
 		<td>set path to 'apxs2' command (default: '/usr/bin/apxs2')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">--suhosin</td>
@@ -118,7 +118,7 @@
 		<td>hostname</td>
 		<td>hostname for SUHOSIN patch/extension source download (optional, default: 'download.suhosin.org')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">--xdebug</td>
@@ -135,7 +135,7 @@
 		<td>hostname</td>
 		<td>hostname for xDebug extension source download (optional, default: 'xdebug.org')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 	<tr>
 		<td align="right">--memcached</td>
@@ -152,7 +152,7 @@
 		<td>hostname</td>
 		<td>hostname for memcached extension source download (optional, default: 'memcached.org')</td>
 	</tr>
-	<tr><td colspan="3"></td></tr>
+	<tr><td colspan="3">&nbsp;</td></tr>
 	
 </table>
 
