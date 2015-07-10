@@ -34,6 +34,7 @@
 </table>
 
 
+
 <table>
 	<tr>
 		<td align="right">-t</td>
@@ -46,6 +47,7 @@
 		<td>target path for php.ini file (default '/usr/local/php_PHPVERSION_-cgi/etc/')</td>
 	</tr>
 </table>
+
 
 
 <table>
@@ -67,6 +69,7 @@
 </table>
 
 
+
 <table>
 	<tr>
 		<td align="right">-s</td>
@@ -79,6 +82,7 @@
 		<td>overwrite url to download php source files (overranks '-H hostname' option)</td>
 	</tr>
 </table>
+
 
 
 <table>
@@ -100,6 +104,7 @@
 </table>
 
 
+
 <table>
 	<tr>
 		<td align="right">--sapi</td>
@@ -113,6 +118,7 @@
 	</tr>
 </table>
 
+-	SUHOSIN options
 
 <table>
 	<tr>
@@ -132,6 +138,7 @@
 	</tr>
 </table>
 
+-	xDebug options
 
 <table>
 	<tr>
@@ -151,6 +158,7 @@
 	</tr>
 </table>
 
+-	memcached options
 
 <table>
 	<tr>
