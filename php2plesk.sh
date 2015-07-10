@@ -8,9 +8,6 @@
 ## usage/info: ./php2plesk.sh -h
 ##
 
-## @TODO: inside methods, check if files/directories are generated properly or if they are executable if needed (!)
-
-
 ## defaults/configuration
 ##
 TARGETINSTPATH="/usr/local/php_PHPVERSION_-cgi/"
