@@ -16,7 +16,7 @@ OR
 
    build new set of php binaries from (downloaded) sources and install addional PHP(-fast-cgi) version to PLESK 11.5+ environment on Ubuntu 10+ or similar...
 
-   yet, for php7 none of the extensions is available, since only stable versions are accepted 
+   yet, for php7 none of the extensions is available, since only stable versions are accepted... but, of course, you can patch the script to checkout the corresonding development branch and give it a try. so far, I had no luck :D
 
 
 ### OPTIONS:
