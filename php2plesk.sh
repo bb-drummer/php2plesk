@@ -24,13 +24,13 @@ APXSPATH="/usr/bin/apxs2"
 
 SUHOSINAPPLY=0
 SUHOSINHOST="download.suhosin.org"
-SUHOSINVERSION="0.9.37.1"
+SUHOSINVERSION="0.9.38"
 SUHOSINURL="https://_SUHOSINHOST_/suhosin-_SUHOSINVERSION_.tar.gz"
 SUHOSINPATH="_PHPPATH_/suhosin-_SUHOSINVERSION_.tar.gz"
 
 XDEBUGAPPLY=0
 XDEBUGHOST="xdebug.org"
-XDEBUGVERSION="2.3.2"
+XDEBUGVERSION="2.3.3"
 XDEBUGURL="http://_XDEBUGHOST_/files/xdebug-_XDEBUGVERSION_.tgz"
 XDEBUGPATH="_PHPPATH_/xdebug-_XDEBUGVERSION_.tgz"
 
@@ -122,7 +122,8 @@ configure_php ()
 {
 	# basic config
 	INST_PHPBASECONF=
-	INST_PHPBASECONF=${INST_PHPBASECONF}"--with-libdir=/lib64"
+	INST_PHPBASECONF=${INST_PHPBASECONF}"--with-libdir=lib"
+	INST_PHPBASECONF=${INST_PHPBASECONF}" --with-xpm-dir=/usr --with-ldap=/usr"
 	INST_PHPBASECONF=${INST_PHPBASECONF}" --cache-file=../config.cache"
 	INST_PHPBASECONF=${INST_PHPBASECONF}" --prefix=${INST_PATH}"
 	INST_PHPBASECONF=${INST_PHPBASECONF}" --with-config-file-path=${INST_INIPATH}"
@@ -377,9 +378,28 @@ install_basics () {
 		
 		if dpkg --list | grep "build-essential" >/dev/null; then echo "'build-essential' already installed";
 		else apt-get install -y build-essential; fi
+
 		if dpkg --list | grep "make" >/dev/null; then echo "'make' already installed";
 		else apt-get install -y make; fi
 
+                if dpkg --list | grep "gcc" >/dev/null; then echo "'gcc' already installed";
+                else apt-get install -y gcc; fi
+
+                if dpkg --list | grep "bison" >/dev/null; then echo "'bison' already installed";
+                else apt-get install -y bison; fi
+
+                if dpkg --list | grep "libgmp-dev" >/dev/null; then echo "'libgmp-dev' already installed";
+                else apt-get install -y libgmp-dev; fi
+
+                if dpkg --list | grep "libxpm-dev" >/dev/null; then echo "'libxpm-dev' already installed";
+                else apt-get install -y libxpm-dev; fi
+                
+                if dpkg --list | grep "libssh2-1" >/dev/null; then echo "'libssh2-1' already installed";
+                else apt-get install -y "libssh2-1"; fi
+                
+                if dpkg --list | grep "libssh2-1-dev" >/dev/null; then echo "'libssh2-1-dev' already installed";
+                else apt-get install -y "libssh2-1-dev"; fi
+                
 		if dpkg --list | grep "autoconf" >/dev/null; then echo "'autoconf' already installed";
 		else apt-get install -y autoconf; fi
 	
@@ -652,6 +672,7 @@ build_php () {
 	
 	if [ "$INST_VERBOSE" == "1" ]; then 
 		echo ">>> build new php '${INST_VERSION}' from '${INST_SRCURL}' to '${INST_PATH}'...";
+                echo "./configure ${INST_PHPBASECONF} ${INST_PHPCONFIGURE}";
 		./configure ${INST_PHPBASECONF} ${INST_PHPCONFIGURE};
 		## ./configure '--with-libdir=/lib64' '--cache-file=../config.cache' --prefix=${INST_PATH} --with-config-file-path=${INST_INIPATH} --with-config-file-scan-dir=${INST_INIPATH}php.d ${INST_PHPCONFIGURE};
 		## ./configure '--with-libdir=/lib64' '--cache-file=../config.cache' --prefix=${INST_PATH} --with-config-file-path=${INST_INIPATH} --with-config-file-scan-dir=${INST_INIPATH}php.d '--disable-debug' '--with-pic' '--disable-rpath' '--with-bz2' '--with-curl' --with-freetype-dir=${INST_PATH} --with-png-dir=${INST_PATH} '--enable-gd-native-ttf' '--without-gdbm' '--with-gettext' '--with-gmp' '--with-iconv' --with-jpeg-dir=${INST_PATH} '-with-openssl' '--with-pspell' '--with-pcre-regex' '--with-zlib' '--enable-exif' '--enable-ftp' '--enable-sockets' '--enable-sysvsem' '--enable-sysvshm' '--enable-sysvmsg' '--enable-wddx' '--with-kerberos' '--with-unixODBC=/usr' '--enable-shmop' '--enable-calendar' '--without-sqlite3' --with-libxml-dir=${INST_PATH} '--enable-pcntl' '--with-imap' '--with-imap-ssl' '--enable-mbstring' '--enable-mbregex' '--with-gd' '--enable-bcmath' '--with-xmlrpc' '--with-ldap' '--with-ldap-sasl' '--with-mysql' '--with-mysqli' '--with-pdo-mysql' '--with-pdo-pgsql' '--with-snmp' '--enable-soap' '--with-xsl' '--enable-xmlreader' '--enable-xmlwriter' '--enable-pdo' --with-pear=${INST_PATH}pear '--with-mcrypt' '--enable-intl' '--without-pdo-sqlite' '--enable-zip' '--enable-dba' '--enable-memcached'
