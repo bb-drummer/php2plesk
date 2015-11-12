@@ -645,12 +645,17 @@ fetch_php () {
 	fi
 	INST_SRCPATH=`pwd`;
 	
-  if [ "$INST_VERSION" == *"dev"* ]; then
-    cd ${INST_TMPPATH};
-    rm -rf php-${INST_VERSION};
-    mv php-src* php-${INST_VERSION};
-    cd php-${INST_VERSION};
-  fi
+  case "$INST_VERSION" in
+    *dev*)
+      echo "renaming dev-srv folder to php-${INST_VERSION}";
+      cd ${INST_TMPPATH};
+      rm -rf php-${INST_VERSION};
+      mv php-src* php-${INST_VERSION};
+      cd php-${INST_VERSION};
+      CPWD = `pwd`;
+      echo "curent folder: $CPWD";
+    ;;
+  esac
 
 	if [ "$INST_VERBOSE" == "1" ]; then 
 		echo "";
