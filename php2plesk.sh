@@ -652,8 +652,10 @@ fetch_php () {
       rm -rf php-${INST_VERSION};
       mv php-src* php-${INST_VERSION};
       cd php-${INST_VERSION};
-      CPWD = `pwd`;
-      echo "curent folder: $CPWD";
+      CPWD=`pwd`;
+      INST_SRCPATH=`pwd`;
+      echo "current path: $CPWD";
+      echo "current src-path: $INST_SRCPATH";
     ;;
   esac
 
