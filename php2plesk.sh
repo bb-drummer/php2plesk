@@ -645,20 +645,6 @@ fetch_php () {
 	fi
 	INST_SRCPATH=`pwd`;
 	
-  case "$INST_VERSION" in
-    *dev*)
-      echo "renaming dev-srv folder to php-${INST_VERSION}";
-      cd ${INST_TMPPATH};
-      rm -rf php-${INST_VERSION};
-      mv php-src* php-${INST_VERSION};
-      cd php-${INST_VERSION};
-      CPWD=`pwd`;
-      INST_SRCPATH=`pwd`;
-      echo "current path: $CPWD";
-      echo "current src-path: $INST_SRCPATH";
-    ;;
-  esac
-
 	if [ "$INST_VERBOSE" == "1" ]; then 
 		echo "";
 	    echo ">>> finish downloading new php source files";
@@ -666,6 +652,37 @@ fetch_php () {
 	    echo "";
 	fi
 	logMessage ">>> finish downloading new php source files...";
+}
+
+## check and prepare git-sources
+prepare_git_sources () {
+  case "$INST_VERSION" in
+    *dev*)
+      logMessage ">>> build from git-source requested...";
+      logMessage ">>> begin preparing git-source files...";
+      if [ "$INST_VERBOSE" == "1" ]; then 
+        echo "";
+        echo "renaming dev-srv folder to php-${INST_VERSION}";
+        echo "";
+      fi
+
+      cd ${INST_TMPPATH};
+      rm -rf php-${INST_VERSION};
+      mv php-src* php-${INST_VERSION};
+      cd php-${INST_VERSION};
+      CPWD=`pwd`;
+      INST_SRCPATH=`pwd`;
+      ./buildconf
+
+      if [ "$INST_VERBOSE" == "1" ]; then 
+        echo "";
+        echo "current path: $CPWD";
+        echo "current src-path: $INST_SRCPATH";
+        echo "";
+      fi
+      logMessage ">>> finish preparing git-source files...";
+    ;;
+  esac  
 }
 
 ## build php binary and extension files
@@ -1517,7 +1534,8 @@ fi
 					##
 		            fetch_php;
 		
-		
+		            prepare_git_sources;
+
 					## build php
 					##
 					if [ $NONINTERACTIVE == 0 ] && [ $INST_SKIP_BUILDPHP == 0 ]
