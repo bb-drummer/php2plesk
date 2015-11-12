@@ -645,6 +645,13 @@ fetch_php () {
 	fi
 	INST_SRCPATH=`pwd`;
 	
+  if [ "$INST_VERSION" == *"dev"* ]; then
+    cd ${INST_TMPPATH};
+    rm -rf php-${INST_VERSION};
+    mv php-src* php-${INST_VERSION};
+    cd php-${INST_VERSION};
+  fi
+
 	if [ "$INST_VERBOSE" == "1" ]; then 
 		echo "";
 	    echo ">>> finish downloading new php source files";
