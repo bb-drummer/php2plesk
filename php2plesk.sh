@@ -3,9 +3,11 @@
 ##
 ## "php2plesk.sh"
 ##  - build new set of php binaries from (downloaded) sources and 
-##    install addional PHP(-fast-cgi) version to PLESK 11.5+ environment on Ubuntu 10+ or similar...
+##    install addional PHP(-fast-cgi) version to PLESK 11.5+ environment on Ubuntu LTS 10+ or similar...
 ##
 ## usage/info: ./php2plesk.sh -h
+##
+## (c) dragon-projects.net, Björn Bartels, me@bjoernbartels.earth
 ##
 
 ## defaults/configuration
@@ -256,7 +258,7 @@ cat << EOF
 DISCLAIMER
     THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
 	 
-	The script is tested in followng environments:
+	The script is tested involving the following components:
 	 OS       : Ubuntu 10.04+
 	 Plesk    : 11.5+
 	 PHP      : 5.2+
@@ -265,17 +267,18 @@ DISCLAIMER
 	 memcached: 1.4+
 	
 
-CHANGE-LOG
+CHANGE-
+    2015-11-12   : (bba) add simple 'php-dev' support
     2015-05-21   : (bba) make php 'configure' parameters switchable and more accessable in the beginning of the script
     2015-05-21   : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
     late 2014    : (bba) initial release 
 
 
 INSTALLER INFO:
-   homepage/       http://dragon-projects.net/projects/scripts/php2plesk.sh
-   support/bugs    
-   copyright       (c) 2015 [dragon-projects.net]
-   licence         GPL-2.0
+    homepage/       http://dragon-projects.net/projects/scripts/php2plesk.sh
+    support/bugs    
+    copyright       (c) 2015 [dragon-projects.net]
+    licence         GPL-2.0
 
 EOF
 }
@@ -294,7 +297,7 @@ USAGE:
 
 
 DESCRIPTION:
-   build new set of php binaries from (downloaded) sources and install addional PHP(-fast-cgi) version to PLESK 11.5+ environment on Ubuntu 10+ or similar...
+   build new set of php binaries from (downloaded) sources and install addional PHP(-fast-cgi) version to PLESK 11.5+ environment on Ubuntu LTS 10+ or similar...
 
 
 OPTIONS:
@@ -342,7 +345,8 @@ OPTIONS:
     _XDEBUGHOST_          xDebug extension source download hostname (ex: 'xdebug.org')
     _MEMCACHEDVERSION_    xDebug extension version (ex: '2.3.2')
     _MEMCACHEDHOST_       xDebug extension source download hostname (ex: 'memcached.org')
-	
+
+
 EXAMPLES:
 
 	- to compile php5.6.9 including suhosin patch enter...
@@ -358,6 +362,19 @@ EXAMPLES:
 	  /root/php2plesk/php2plesk.sh -v -p 5.3.2 -d 5.3.2 -t /usr/local/php5.3.2-cgi-suhosin/  -i /usr/local/php5.3.2-cgi-suhosin/etc/ --suhosin --suhosin-version 0.9.37.1 -n -u http://museum.php.net/php5/php-5.3.2.tar.gz
 
 
+  - re-building or when a build was not completed:
+     - in case, remove a corresponding 'plesk' php-handler first ('/usr/local/psa/bin/php_handler --remove {php_handler_id}')
+     - (view a list of 'plesk' php-handler with '/usr/local/psa/bin/php_handler --list')
+     - remove the corresponding php binaries folder (ex: '/usr/local/php5.6.9-cgi-suhosin')
+     - in case, remove any remaining php source folders under the temporary file path (default: '/tmp/')
+
+
+  - bulding from (git-)sources:
+    when building php with a fresh checkout from its (original) git-repository some specific settings must apply:
+     - the word 'dev' must be included in the php version parameter (ex: '7.x-dev')
+     - use the '.tar.gz'/'.tgz' download-link as the download source parameter ('http://git.php.net/?p=php-src.git;a=snapshot;h=refs/heads/master;sf=tgz')
+
+  
 EOF
 }
 
