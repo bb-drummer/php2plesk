@@ -255,7 +255,7 @@ scriptvendor()
 {
 cat << EOF
 
-DISCLAIMER
+DISCLAIMER:
     THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
 	 
 	The script is tested involving the following components:
@@ -267,7 +267,7 @@ DISCLAIMER
 	 memcached: 1.4+
 	
 
-CHANGE-
+CHANGELOG:
     2015-11-12   : (bba) add simple 'php-dev' support
     2015-05-21   : (bba) make php 'configure' parameters switchable and more accessable in the beginning of the script
     2015-05-21   : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
