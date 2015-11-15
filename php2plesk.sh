@@ -797,6 +797,10 @@ build_php () {
 		make install >/dev/null;
 	fi
 	
+	if [ !-e ${INST_PATH} ]; do
+		exit;
+	done
+	
 	cd ${INST_PATH};
 	mkdir etc;
 	cd etc;
