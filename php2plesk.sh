@@ -704,7 +704,8 @@ configure_extensions ()
 			PHPMODS=
 		;;
 		*none*)
-			PHPMODS=" --disable-all"
+			PHPMODS=" --disable-all --without-pear"
+			##PHPMODS=" --disable-all --enable-xml"
 		;;
 		*full*)
 			for PHPMOD in ${INST_EXTENSIONS[@]}; do
