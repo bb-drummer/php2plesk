@@ -716,7 +716,7 @@ configure_extensions ()
 			for PHPMOD in ${INST_EXTENSIONS[@]}; do
 				EXTENSION__CONFIRM=0
 				confirm_extension "install extension '${PHPMOD}'"
-				if [ $EXTENSION__CONFIRM == 1]; then 
+				if [ $EXTENSION__CONFIRM == 1 ]; then 
 					PHPMODS=${PHPMODS}" ${PHPMOD}"
 				fi
 			done
