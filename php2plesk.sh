@@ -1279,10 +1279,16 @@ while true; do
 			CONFIGURE_MODE=${2}
 			case "${CONFIGURE_MODE}" in
 				*default*)
+					## no action required now
+				;;
 				*none*)
+					## no action required now
+				;;
 				*full*)
+					## no action required now
+				;;
 				*custom*)
-					## no action required
+					## no action required now
 				;;
 				*)
 					CONFIGURE_MODE=default
