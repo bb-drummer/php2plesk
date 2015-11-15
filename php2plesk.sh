@@ -797,7 +797,7 @@ build_php () {
 		make install >/dev/null;
 	fi
 	
-	if [ !-e ${INST_PATH} ]; then
+	if [ !-e "${INST_PATH}" ]; then
 		exit;
 	fi
 	
