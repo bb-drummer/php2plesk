@@ -822,7 +822,7 @@ build_php () {
 	fi
 		
 	if [ "$INST_EDITINI" == "1" ] || [ "$INST_VERBOSE" == "1" ]; then
-		if [ "$NONINTERACTIVE" == "0" ] then
+		if [ "$NONINTERACTIVE" == "0" ]; then
 			read -p "<<< Would you like to edit the 'php.ini' file '${INST_INIPATH}php.ini' [Y/n] ?" edit_php_ini
 			case "$edit_php_ini" in
 					Yes|yes|Y|y|Ja|ja|J|j|"") 
