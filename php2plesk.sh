@@ -518,19 +518,19 @@ install_basics () {
 	fi
 	
 	## link some libraries if still missing
-	if [ !-e "/usr/include/gmp.h" ]; then
+	if [ ! -e "/usr/include/gmp.h" ]; then
 		ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 	fi
-	if [ !-e "/usr/lib/libXpm.a" ]; then
+	if [ ! -e "/usr/lib/libXpm.a" ]; then
 		ln -s /usr/lib/x86_64-linux-gnu/libXpm.a /usr/lib/libXpm.a
 	fi
-	if [ !-e "/usr/lib/libXpm.so" ]; then
+	if [ ! -e "/usr/lib/libXpm.so" ]; then
 		ln -s /usr/lib/x86_64-linux-gnu/libXpm.so /usr/lib/libXpm.so
 	fi
-	if [ !-e "/usr/lib/liblber.a" ]; then
+	if [ ! -e "/usr/lib/liblber.a" ]; then
 		ln -s /usr/lib/x86_64-linux-gnu/liblber.a /usr/lib/liblber.a
 	fi
-	if [ !-e "/usr/lib/libldap_r.a" ]; then
+	if [ ! -e "/usr/lib/libldap_r.a" ]; then
 		ln -s /usr/lib/x86_64-linux-gnu/libldap_r.a /usr/lib/libldap_r.a
 	fi
 
@@ -797,7 +797,7 @@ build_php () {
 		make install >/dev/null;
 	fi
 	
-	if [ !-e "${INST_PATH}" ]; then
+	if [ ! -e "${INST_PATH}" ]; then
 		exit;
 	fi
 	
