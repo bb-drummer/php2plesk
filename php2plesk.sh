@@ -335,50 +335,50 @@ DESCRIPTION:
 
 
 OPTIONS:
-	-d name						PLESK panel display name
-	-p version					php version (ex: 5.6.9)
+	-d name                     PLESK panel display name
+	-p version                  php version (ex: 5.6.9)
 
-	-t path						target path for php installation (default '/usr/local/php_PHPVERSION_-cgi/')
-	-i path						target path for php.ini file (default '/usr/local/php_PHPVERSION_-cgi/etc/')
+	-t path                     target path for php installation (default '/usr/local/php_PHPVERSION_-cgi/')
+	-i path                     target path for php.ini file (default '/usr/local/php_PHPVERSION_-cgi/etc/')
 
-	-l filepath					target path to installer logfile (default './php2plesk.log')
-	-H filepath					target path to PLESK panel 'php_handler' command (default '/usr/local/psa/bin/php_handler')
-	-I plesk-id					overwrite PLESK internal ID (default '_PHPVERSION_-custom')
-	-s hostname					overwrite php.net mirror hostname to download php source files (default 'de1')
-	-u url						overwrite url to download php source files (overranks '-H hostname' option)
-	-T path						installer path for temporary file storage (default '/tmp/')
+	-l filepath                 target path to installer logfile (default './php2plesk.log')
+	-H filepath                 target path to PLESK panel 'php_handler' command (default '/usr/local/psa/bin/php_handler')
+	-I plesk-id                 overwrite PLESK internal ID (default '_PHPVERSION_-custom')
+	-s hostname                 overwrite php.net mirror hostname to download php source files (default 'de1')
+	-u url                      overwrite url to download php source files (overranks '-H hostname' option)
+	-T path                     installer path for temporary file storage (default '/tmp/')
 
-	-e							open php.ini file to be edited (requires vim)
-	-n							be non-interactive (overranks '-e' option)
+	-e                          open php.ini file to be edited (requires vim)
+	-n                          be non-interactive (overranks '-e' option)
 
-	-h							show this message
-	-v							verbose output
+	-h                          show this message
+	-v                          verbose output
 
-	--sapi						also compile apache2 module, use with caution(!)
-	--apxs-path					set path to 'apxs2' command (default: '/usr/bin/apxs2')
+	--sapi                      also compile apache2 module, use with caution(!)
+	--apxs-path                 set path to 'apxs2' command (default: '/usr/bin/apxs2')
 	
-	--suhosin					 add SUHOSIN patch/extension to php configuration, must also set '--suhosin-version'
-	--suhosin-version version	 SUHOSIN patch/extension version (ex: '0.9.37.1') 
-	--suhosin-host hostname		hostname for SUHOSIN patch/extension source download (optional, default: 'download.suhosin.org')
+	--suhosin                    add SUHOSIN patch/extension to php configuration, must also set '--suhosin-version'
+	--suhosin-version version    SUHOSIN patch/extension version (ex: '0.9.37.1') 
+	--suhosin-host hostname      hostname for SUHOSIN patch/extension source download (optional, default: 'download.suhosin.org')
 
-	--xdebug						add xDebug extension to php configuration, must also set '--xdebug-version'
-	--xdebug-version version		xDebug extension version (ex: '2.3.2') 
-	--xdebug-host hostname		hostname for xDebug extension source download (optional, default: 'xdebug.org')
+	--xdebug                     add xDebug extension to php configuration, must also set '--xdebug-version'
+	--xdebug-version version     xDebug extension version (ex: '2.3.2') 
+	--xdebug-host hostname       hostname for xDebug extension source download (optional, default: 'xdebug.org')
 
-	--memcached					add memcached extension to php configuration, must also set '--memcached-version'
-	--memcached-version version	memcached extension version (ex: '1.4.24') 
-	--memcached-host hostname	 hostname for memcached extension source download (optional, default: 'memcached.org')
+	--memcached                  add memcached extension to php configuration, must also set '--memcached-version'
+	--memcached-version version  memcached extension version (ex: '1.4.24') 
+	--memcached-host hostname    hostname for memcached extension source download (optional, default: 'memcached.org')
 
 	
 	placeholders for path and hostname/url parameters:
-	_PHPVERSION_			php version (ex: '5.6.9')
-	_PHPHOST_			 php.net mirror hostname (ex: 'de1')
-	_SUHOSINVERSION_		SUHOSIN patch/extension version (ex: '0.9.37.1')
-	_SUHOSINHOST_		 SUHOSIN patch/extension source download hostname (ex: 'download.suhosin.org')
-	_XDEBUGVERSION_		xDebug extension version (ex: '2.3.2')
-	_XDEBUGHOST_			xDebug extension source download hostname (ex: 'xdebug.org')
-	_MEMCACHEDVERSION_	xDebug extension version (ex: '2.3.2')
-	_MEMCACHEDHOST_		xDebug extension source download hostname (ex: 'memcached.org')
+	_PHPVERSION_                 php version (ex: '5.6.9')
+	_PHPHOST_                    php.net mirror hostname (ex: 'de1')
+	_SUHOSINVERSION_             SUHOSIN patch/extension version (ex: '0.9.37.1')
+	_SUHOSINHOST_                SUHOSIN patch/extension source download hostname (ex: 'download.suhosin.org')
+	_XDEBUGVERSION_              xDebug extension version (ex: '2.3.2')
+	_XDEBUGHOST_                 xDebug extension source download hostname (ex: 'xdebug.org')
+	_MEMCACHEDVERSION_           xDebug extension version (ex: '2.3.2')
+	_MEMCACHEDHOST_              xDebug extension source download hostname (ex: 'memcached.org')
 
 
 EXAMPLES:
