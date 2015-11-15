@@ -489,7 +489,7 @@ install_basics () {
 				
 		done
 			
-		if [ $INST_MEMCACHED == 1 ] then
+		if [ $INST_MEMCACHED == 1 ]; then
 		
 			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]}; do
 				if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed";
@@ -507,7 +507,7 @@ install_basics () {
 			else apt-get install -y ${dependency} >/dev/null; fi
 		done
 			
-		if [ $INST_MEMCACHED == 1 ] then
+		if [ $INST_MEMCACHED == 1 ]; then
 		
 			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]}; do
 				if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed" >/dev/null;
