@@ -482,14 +482,16 @@ install_basics () {
 		apt-get update;
 		apt-get upgrade -y ;
 		
-		for dependency in ${INST_DEPENDENCIES[@]} do
+		for dependency in ${INST_DEPENDENCIES[@]}; do
+			
 			if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed";
 			else apt-get install -y ${dependency}; fi
+				
 		done
 			
 		if [ $INST_MEMCACHED == 1 ] then
 		
-			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]} do
+			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]}; do
 				if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed";
 				else apt-get install -y ${dependency}; fi
 			done
@@ -500,14 +502,14 @@ install_basics () {
 		apt-get update >/dev/null;
 		apt-get upgrade -y >/dev/null;
 		
-		for dependency in ${INST_DEPENDENCIES[@]} do
+		for dependency in ${INST_DEPENDENCIES[@]}; do
 			if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed" >/dev/null;
 			else apt-get install -y ${dependency} >/dev/null; fi
 		done
 			
 		if [ $INST_MEMCACHED == 1 ] then
 		
-			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]} do
+			for dependency in ${INST_DEPENDENCIES_MEMCACHED[@]}; do
 				if dpkg --list | grep "${dependency}" >/dev/null; then echo "'${dependency}' already installed" >/dev/null;
 				else apt-get install -y ${dependency} >/dev/null; fi
 			done
@@ -705,12 +707,12 @@ configure_extensions ()
 			PHPMODS=" --disable-all"
 		;;
 		*full*)
-			for PHPMOD in ${INST_EXTENSIONS[@]} do
+			for PHPMOD in ${INST_EXTENSIONS[@]}; do
 				PHPMODS=${PHPMODS}" ${PHPMOD}"
 			done
 		;;
 		*custom*)
-			for PHPMOD in ${INST_EXTENSIONS[@]} do
+			for PHPMOD in ${INST_EXTENSIONS[@]}; do
 				EXTENSION__CONFIRM=0
 				confirm_extension "install extension '${PHPMOD}'"
 				if [ $EXTENSION__CONFIRM == 1]; then 
@@ -734,7 +736,7 @@ confirm_extension () {
 		then
 			read -p ">>> $1 [(YJ)/n]: " CONFIRMNEXTSTEP
 			case "$CONFIRMNEXTSTEP" in
-				Yes|yes|Y|y|Ja|ja|J|j|"") ## continue installing...
+				Yes|yes|Y|y|Ja|ja|J|j|"") ## confirm installing extension...
 					logMessage ">>> '$1' confirmed...";
 					EXTENSION__CONFIRM=1
 				;;
