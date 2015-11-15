@@ -683,7 +683,7 @@ configure_php ()
 	INST_PHPCONFIGURE=
 
 	PHPMODS=
-	configure_extensions();
+	configure_extensions;
 	
 	# apply modules
 	INST_PHPCONFIGURE=${INST_PHPCONFIGURE}" "${PHPMODS}
