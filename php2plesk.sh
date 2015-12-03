@@ -355,7 +355,7 @@ OPTIONS:
     -h                           show this message
     -v                           verbose output
 
-    --configure mode             modes: default, none, full, custom
+    --configure mode             build-in extension compile modes: default, none, full, custom
                                   - default: compile default minimal php extensions, this is the default setting
                                   - none: do not compile any php extensions 
                                   - full: compile all default php extensions currently available
