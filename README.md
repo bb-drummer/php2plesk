@@ -36,6 +36,11 @@ OR
 *	`-n`                             be non-interactive (overranks '-e' option)
 *	`-h`                             show this message
 *	`-v`                             verbose output
+*	`--configure mode`               modes: default, none, full, custom
+                                      - `default`: compile default minimal php extensions, this is the default setting
+                                      - `none`: do not compile any php extensions 
+                                      - `full`: compile all default php extensions currently available
+                                      - `custom`: ask on every extension wether to compile or not 
 *	`--sapi`                         also compile apache2 module, use with caution(!)
 *	`--apxs-path`                    set path to 'apxs2' command (default: '/usr/bin/apxs2')
 *	`--suhosin`                      add SUHOSIN patch/extension to php configuration, must also set '--suhosin-version'
@@ -111,21 +116,24 @@ OR
 THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
 
 The script is tested involving the following components:
-     OS            : Ubuntu 10.04+
-     Plesk         : 11.5+
-     PHP           : 5.2+
-     Suhosin       : 0.9+
-     xDebug        : 2.3+
-     memcached     : 1.4+
+
+-     OS            : Ubuntu 10.04+
+-     Plesk         : 11.5+
+-     PHP           : 5.2+
+-     Suhosin       : 0.9+
+-     xDebug        : 2.3+
+-     memcached     : 1.4+
 
 
 
 
 ### CHANGELOG:
 
-2015-12-03     : (bba) make php 'configure' parameters selectable 
-2015-11-30     : (bba) simplyfied dependencies installations 
-2015-11-12     : (bba) add simple 'php-dev' support
-2015-05-21     : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
-late 2014      : (bba) initial release 
+-	2015-12-03     : (bba) make php 'configure' parameters selectable
+-	2015-11-30     : (bba) simplyfied dependencies installations 
+-	2015-11-12     : (bba) add simple 'php-dev' support
+-	2015-05-21     : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
+-	late 2014      : (bba) initial release 
+
+
 
