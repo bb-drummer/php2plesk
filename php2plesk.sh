@@ -257,27 +257,27 @@ scriptinfo()
 cat << EOF
 
 INSTALLER CONFIGURATION:
-    VERSION         = ${INST_VERSION} 
-    DISPLAYNAME     = ${INST_DISPLAYNAME} 
-    PATH            = ${INST_PATH} 
-    INIPATH         = ${INST_INIPATH} 
-    PHPHANDLER        = ${INST_PHPHANDLER} 
-    PLESKID         = ${INST_PLESKID} 
-    TMPPATH         = ${INST_TMPPATH}
-    LOGFILE         = ${INST_LOGFILE}
-    MIRRORHOST        = ${INST_SRCHOST} 
-    MIRRORURL        = ${INST_SRCURL}
-    SAPI            = ${INST_SAPI}
-    APXSPATH        = ${INST_APXSPATH}
-    SUHOSIN         = ${INST_SUHOSIN}
-    SUHOSINURL        = ${INST_SUHOSINURL}
-    XDEBUG            = ${INST_XDEBUG}
-    XDEBUGURL        = ${INST_XDEBUGURL}
-    MEMCACHED        = ${INST_MEMCACHED}
-    MEMCACHEDURL    = ${INST_MEMCACHEDURL}
+    VERSION        = ${INST_VERSION} 
+    DISPLAYNAME    = ${INST_DISPLAYNAME} 
+    PATH           = ${INST_PATH} 
+    INIPATH        = ${INST_INIPATH} 
+    PHPHANDLER     = ${INST_PHPHANDLER} 
+    PLESKID        = ${INST_PLESKID} 
+    TMPPATH        = ${INST_TMPPATH}
+    LOGFILE        = ${INST_LOGFILE}
+    MIRRORHOST     = ${INST_SRCHOST} 
+    MIRRORURL      = ${INST_SRCURL}
+    SAPI           = ${INST_SAPI}
+    APXSPATH       = ${INST_APXSPATH}
+    SUHOSIN        = ${INST_SUHOSIN}
+    SUHOSINURL     = ${INST_SUHOSINURL}
+    XDEBUG         = ${INST_XDEBUG}
+    XDEBUGURL      = ${INST_XDEBUGURL}
+    MEMCACHED      = ${INST_MEMCACHED}
+    MEMCACHEDURL   = ${INST_MEMCACHEDURL}
 
-    BASECONF        = ${INST_PHPBASECONF}
-    MODULES         = ${INST_PHPCONFIGURE}
+    BASECONF       = ${INST_PHPBASECONF}
+    MODULES        = ${INST_PHPCONFIGURE}
 EOF
 }
 
@@ -292,26 +292,27 @@ DISCLAIMER:
     THIS SCRIPT COMES WITH ABSOLUTELY NO WARRANTY !!! USE AT YOUR OWN RISK !!!
      
     The script is tested involving the following components:
-     OS        : Ubuntu 10.04+
-     Plesk    : 11.5+
-     PHP        : 5.2+
-     Suhosin    : 0.9+
-     xDebug    : 2.3+
-     memcached: 1.4+
+     OS            : Ubuntu 10.04+
+     Plesk         : 11.5+
+     PHP           : 5.2+
+     Suhosin       : 0.9+
+     xDebug        : 2.3+
+     memcached     : 1.4+
     
 
 CHANGELOG:
-    2015-11-12    : (bba) add simple 'php-dev' support
-    2015-05-21    : (bba) make php 'configure' parameters switchable and more accessable in the beginning of the script
-    2015-05-21    : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
-    late 2014    : (bba) initial release 
+    2015-12-03     : (bba) make php 'configure' parameters selectable 
+    2015-11-30     : (bba) simplyfied dependencies installations 
+    2015-11-12     : (bba) add simple 'php-dev' support
+    2015-05-21     : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
+    late 2014      : (bba) initial release 
 
 
 INSTALLER INFO:
     homepage/        http://dragon-projects.net/projects/scripts/php2plesk.sh
     support/bugs    
     copyright        (c) 2015 [dragon-projects.net]
-    licence         GPL-2.0
+    licence          GPL-2.0
 
 EOF
 }
@@ -379,11 +380,11 @@ OPTIONS:
     placeholders for path and hostname/url parameters:
     _PHPVERSION_                 php version (ex: '5.6.9')
     _PHPHOST_                    php.net mirror hostname (ex: 'de1')
-    _SUHOSINVERSION_             SUHOSIN patch/extension version (ex: '0.9.37.1')
+    _SUHOSINVERSION_             SUHOSIN patch/extension version (ex: '0.9.38')
     _SUHOSINHOST_                SUHOSIN patch/extension source download hostname (ex: 'download.suhosin.org')
-    _XDEBUGVERSION_              xDebug extension version (ex: '2.3.2')
+    _XDEBUGVERSION_              xDebug extension version (ex: '2.3.3')
     _XDEBUGHOST_                 xDebug extension source download hostname (ex: 'xdebug.org')
-    _MEMCACHEDVERSION_           xDebug extension version (ex: '2.3.2')
+    _MEMCACHEDVERSION_           xDebug extension version (ex: '1.4.25')
     _MEMCACHEDHOST_              xDebug extension source download hostname (ex: 'memcached.org')
 
 
