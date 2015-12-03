@@ -301,8 +301,8 @@ DISCLAIMER:
     
 
 CHANGELOG:
-    2015-12-03     : (bba) make php 'configure' parameters selectable 
-    2015-11-30     : (bba) simplyfied dependencies installations 
+    2015-12-15     : (bba) make php 'configure' parameters selectable 
+    2015-11-15     : (bba) simplyfied dependencies installations 
     2015-11-12     : (bba) add simple 'php-dev' support
     2015-05-21     : (bba) add support for SUHOSIN patch/extension, xDebug, memcached
     late 2014      : (bba) initial release 
