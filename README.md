@@ -37,10 +37,10 @@ OR
 *	`-h`                             show this message
 *	`-v`                             verbose output
 *	`--configure mode`               modes: default, none, full, custom
-                                      *	`default`: compile default minimal php extensions, this is the default setting
-                                      *	`none`: do not compile any php extensions 
-                                      *	`full`: compile all default php extensions currently available
-                                      *	`custom`: ask on every extension wether to compile or not 
+     *	`default`: compile default minimal php extensions, this is the default setting
+     *	`none`: do not compile any php extensions 
+     *	`full`: compile all default php extensions currently available
+     *	`custom`: ask on every extension wether to compile or not 
 *	`--sapi`                         also compile apache2 module, use with caution(!)
 *	`--apxs-path`                    set path to 'apxs2' command (default: '/usr/bin/apxs2')
 *	`--suhosin`                      add SUHOSIN patch/extension to php configuration, must also set '--suhosin-version'
