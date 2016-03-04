@@ -1070,14 +1070,15 @@ apply_xdebug () {
         # make
         make;
         # make install
-        cp modules/xdebug.so ${INST_PATH}/lib/php/extensions/no-debug-non-zts-20131226/
+        mkdir -p ${INST_PATH}/lib/php/extensions/no-debug-non-zts/
+        cp modules/xdebug.so ${INST_PATH}/lib/php/extensions/no-debug-non-zts/
         
         # cp xdebug.ini -> php/etc/php.d/
         cp xdebug.ini ${INST_PATH}/etc/php.d/;
         rm -f ${INST_PATH}/etc/php.d/xdebug_enabled.ini;
         
         # enable extension
-        echo "zend_extension=${INST_PATH}/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" >> ${INST_PATH}/etc/php.d/xdebug_enabled.ini;
+        echo "zend_extension=${INST_PATH}/lib/php/extensions/no-debug-non-zts/xdebug.so" >> ${INST_PATH}/etc/php.d/xdebug_enabled.ini;
         
         
     fi
