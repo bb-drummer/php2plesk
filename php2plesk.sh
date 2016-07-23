@@ -12,7 +12,7 @@
 
 ## defaults/configuration
 ##
-EXTRA_VERSION = ""
+EXTRAVERSION = ""
 TARGETINSTPATH="/usr/local/php_PHPVERSION_-cgi/"
 TARGETINIPATH="/usr/local/php_PHPVERSION_-cgi/etc/"
 PHPHANDLER="/usr/local/psa/bin/php_handler"
@@ -764,9 +764,9 @@ patch_PHP_Version ()
     logMessage ">>> apply php version string patch'...";
     echo ">>> apply php version string patch'...";
     if [ "$INST_VERBOSE" == "1" ]; then 
-        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRA_VERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in
+        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in
     else
-        replace "include \"pdo/php_pdo" "include \"ext/pdo/php_pdo" -- /tmp/php-${INST_VERSION}/ext/pdo_*/*.c > /dev/null;
+        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in > /dev/null;
     fi
 
 }
@@ -1506,7 +1506,7 @@ fi
     current_work_dir=`pwd`;
     
     INST_VERSION=$PHPVERSION
-    INST_EXTRA_VERSION=${" "/EXTRAVERSION/" @ "/`date`}
+    INST_EXTRAVERSION=${" "/EXTRAVERSION/" @ "/`date`}
     INST_DISPLAYNAME=$DISPLAYNAME
     INST_PATH=${TARGETINSTPATH//_PHPVERSION_/"$INST_VERSION"}
     INST_INIPATH=${TARGETINIPATH//_PHPVERSION_/"$INST_VERSION"}
