@@ -1288,6 +1288,10 @@ while true; do
         PHPVERSION=${2}
             shift 2
         ;;
+        -x|--extra-version|--extraversion)
+        EXTRAVERSION=${2}
+            shift 2
+        ;;
 
 ## --- php version install options --------
         -t|--target-path|--targetpath|--path|--php-path|--phppath)
