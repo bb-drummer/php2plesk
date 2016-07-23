@@ -12,7 +12,7 @@
 
 ## defaults/configuration
 ##
-EXTRAVERSION = ""
+EXTRAVERSION=""
 TARGETINSTPATH="/usr/local/php_PHPVERSION_-cgi/"
 TARGETINIPATH="/usr/local/php_PHPVERSION_-cgi/etc/"
 PHPHANDLER="/usr/local/psa/bin/php_handler"
@@ -259,6 +259,7 @@ cat << EOF
 
 INSTALLER CONFIGURATION:
     VERSION        = ${INST_VERSION} 
+    EXTRAVERSION   = ${INST_EXTRAVERSION} 
     DISPLAYNAME    = ${INST_DISPLAYNAME} 
     PATH           = ${INST_PATH} 
     INIPATH        = ${INST_INIPATH} 
@@ -806,6 +807,9 @@ build_php () {
     if [ "$INST_VERBOSE" == "1" ]; then 
         echo ">>> build new php '${INST_VERSION}' from '${INST_SRCURL}' to '${INST_PATH}'...";
         echo "./configure ${INST_PHPBASECONF} ${INST_PHPCONFIGURE}";
+
+        patch_PHP_Version;
+		
         ./configure ${INST_PHPBASECONF} ${INST_PHPCONFIGURE};
 
         patch_PDO_paths;
@@ -813,6 +817,9 @@ build_php () {
         make;
         make install;
     else
+
+        patch_PHP_Version >/dev/null;
+		
         ./configure ${INST_PHPBASECONF} ${INST_PHPCONFIGURE} >/dev/null;
 
         patch_PDO_paths >/dev/null;
