@@ -765,9 +765,11 @@ patch_PHP_Version ()
     logMessage ">>> apply php version string patch'...";
     echo ">>> apply php version string patch'...";
     if [ "$INST_VERBOSE" == "1" ]; then 
-        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in
+        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in;
+        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version;
     else
         replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in > /dev/null;
+        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version > /dev/null;
     fi
 
 }
@@ -1514,7 +1516,7 @@ fi
     
     INST_DATE=`date`
     INST_VERSION=$PHPVERSION
-    INST_EXTRAVERSION="- ${EXTRAVERSION} @ ${INST_DATE}"
+    INST_EXTRAVERSION="${EXTRAVERSION} @ ${INST_DATE}"
     INST_DISPLAYNAME=$DISPLAYNAME
     INST_PATH=${TARGETINSTPATH//_PHPVERSION_/"$INST_VERSION"}
     INST_INIPATH=${TARGETINIPATH//_PHPVERSION_/"$INST_VERSION"}
