@@ -12,7 +12,7 @@
 
 ## defaults/configuration
 ##
-EXTRAVERSION=""
+EXTRAVERSION="by [bjoernbartels.earth]"
 TARGETINSTPATH="/usr/local/php_PHPVERSION_-cgi/"
 TARGETINIPATH="/usr/local/php_PHPVERSION_-cgi/etc/"
 PHPHANDLER="/usr/local/psa/bin/php_handler"
@@ -765,11 +765,12 @@ patch_PHP_Version ()
     logMessage ">>> apply php version string patch'...";
     echo ">>> apply php version string patch'...";
     if [ "$INST_VERBOSE" == "1" ]; then 
-        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in;
-        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version;
+        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure /tmp/php-${INST_VERSION}/configure.in;
+        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version.h;
     else
-        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure.in > /dev/null;
-        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version > /dev/null;
+        replace "PHP_EXTRA_VERSION=\"\"" "PHP_EXTRA_VERSION=\"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/configure /tmp/php-${INST_VERSION}/configure.in > /dev/null;
+        replace "PHP_EXTRA_VERSION \"\"" "PHP_EXTRA_VERSION \"${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version.h > /dev/null;
+        replace "PHP_VERSION \"${INST_VERSION}\"" "PHP_VERSION \"${INST_VERSION}${INST_EXTRAVERSION}\"" -- /tmp/php-${INST_VERSION}/main/php_version.h > /dev/null;
     fi
 
 }
