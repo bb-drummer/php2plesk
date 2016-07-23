@@ -12,7 +12,7 @@
 
 ## defaults/configuration
 ##
-EXTRAVERSION="by [bjoernbartels.earth]"
+EXTRAVERSION=" by [bjoernbartels.earth]"
 TARGETINSTPATH="/usr/local/php_PHPVERSION_-cgi/"
 TARGETINIPATH="/usr/local/php_PHPVERSION_-cgi/etc/"
 PHPHANDLER="/usr/local/psa/bin/php_handler"
